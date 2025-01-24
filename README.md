@@ -19,7 +19,7 @@ A simple web scraping tool that fetches web content, extracts links, and perform
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/webscraper.git
+   git clone https://github.com/swiftglitxh/webscraper.git
    cd webscraper
    ```
 
