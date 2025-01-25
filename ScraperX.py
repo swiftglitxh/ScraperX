@@ -1,15 +1,14 @@
-import argparse
-import requests
-import bs4
-from time import sleep
-from datetime import datetime
-
 """
 ScrapperX
 Author: @Swiftglitxh
 Version: 0.1
 Description: A simple web scraping tool that fetches web content, extracts links, and performs directory brute-forcing.
 """
+import argparse
+import requests
+import bs4
+from time import sleep
+from datetime import datetime
 
 # Argument parser setup
 parser = argparse.ArgumentParser(
@@ -23,7 +22,7 @@ version = "0.1"
 
 parser.add_argument('-u', '--url', dest="web", type=str, required=True, help="Target website URL")
 parser.add_argument('-v', '--verbose', dest="verbose", action='store_true', help="Enable verbose output")
-parser.add_argument('-D', '--dirb', dest="dirb", help="Enable directory brute-forcing")
+parser.add_argument('-D', '--dirb', dest="dirb",help="Enable directory brute-forcing")
 parser.add_argument('-L', '--links', dest="href",action="store_true", help="Enable directory href scrapping")
 
 args = parser.parse_args()
@@ -31,12 +30,12 @@ args = parser.parse_args()
 # ASCII Banner
 def banner():
     print("""
- ,---.                                                    ,--.   ,--.
-'   .-'  ,---.,--.--. ,--,--. ,---.  ,---.  ,---. ,--.--.  \\  `.'  / 
-`.  `-. | .--'|  .--'' ,-.  || .-. || .-. || .-. :|  .--'   .'    \\   
-.-'    |\\ `--.|  |   \\ '-'  || '-' '| '-' '\\   --.|  |.--. /  .'.  \\ 
-`-----'  `---'`--'    `--`--'|  |-' |  |-'  `----'`--''--''--'   '--'  v 0.1
-                             `--'   `--'""")
+ ,---.                                             ,--.   ,--.
+'   .-'  ,---.,--.--. ,--,--. ,---.  ,---. ,--.--.  \\  `.'  / 
+`.  `-. | .--'|  .--'' ,-.  || .-. || .-. :|  .--'   .'    \\  
+.-'    |\\ `--.|  |   \\ '-'  || '-' '\\   --.|  |.--. /  .'.  \\ 
+`-----'  `---'`--'    `--`--'|  |-'  `----'`--''--''--'   '--'
+                             `--'                               v 0.1""")
 
 # Define a fake user-agent
 HEADERS = {
@@ -45,14 +44,14 @@ HEADERS = {
 }
 
 if args.dirb:
-	dirb_enabled = "True"
+    dirb_enabled = "True"
 else:
-	dirb_enabled = "False"
+    dirb_enabled = "False"
 
 if args.href:
-	list_enabled = "True"
+    list_enabled = "True"
 else:
-	list_enabled = "False"
+    list_enabled = "False"
 
 def main():
     website = args.web
@@ -79,11 +78,13 @@ def main():
         sleep(0.2)
         print(f" [+] Link Scrapping: {list_enabled}")
         sleep(0.2)
+        print(f" [+] Dirb File: {args.dirb}")
+        sleep(0.2)
         print(f" [+] Author: @Swiftglitxh")
         sleep(0.2)
         print(f" [+] Version: {version}")
         print("+" + "-" * 35 + "+")
-
+        
         # BeautifulSoup Parsing
         soup = bs4.BeautifulSoup(response.text, "lxml")
         sleep(0.2)
@@ -91,11 +92,10 @@ def main():
         sleep(0.2)
 
         # Print source code with a delay for each line
-        with open("source_code.html","w")as f:
-        	f.write(str(soup))
+        with open("source_code.html", "w") as f:
+            f.write(str(soup))
         print(f"╚═[+] [info] {current_time} source_code.html has been written.\n")
-
-
+        
         print("═" * 120 + "\n" + "═" * 120)
 
         # Function to scan and print links
@@ -119,14 +119,15 @@ def main():
 
         # Call the link scanning function
         if args.href:
-        	link_scan()
+            link_scan()
 
-        	print("\n", "═" * 75)
+            print("\n", "═" * 75)
 
         # Function to scan directories from a wordlist file
         def dir_scanner():
             full_url = f"{args.web.rstrip('/')}"  # Remove trailing slash if present
-            directory = "default.txt"  # The wordlist file to scan
+            # The wordlist file to scan
+            directory = "default.txt"
             i = 0  # Initialize counter outside the loop
 
             try:
