@@ -1,5 +1,6 @@
-# ScrapperX
-![image](https://github.com/user-attachments/assets/5a0d6b3c-a105-40b3-a005-50a1669fe54a)
+# ScraperX
+![image](https://github.com/user-attachments/assets/553b76e3-9101-4195-8f82-22a8a7f74a4e)
+
 
 **Author:** @Swiftglitxh  
 **Version:** 0.1  
