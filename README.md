@@ -20,8 +20,8 @@ A simple web scraping tool that fetches web content, extracts links, and perform
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/swiftglitxh/webscraper.git
-   cd webscraper
+   git clone https://github.com/swiftglitxh/scraperx.git
+   cd scraperx
    ```
 
 2. **Install dependencies:**
@@ -35,19 +35,19 @@ A simple web scraping tool that fetches web content, extracts links, and perform
 ### Basic Usage
 
 ```bash
-python webscraper.py -u http://example.com
+python scraperx.py -u http://example.com
 ```
 
 ### Enable Verbose Output
 
 ```bash
-python webscraper.py -u http://example.com -v
+python scraperx.py -u http://example.com -v
 ```
 
 ### Perform Directory Brute-Forcing
 
 ```bash
-python webscraper.py -u http://example.com -D wordlist.txt
+python scraperx.py -u http://example.com -D wordlist.txt
 ```
 
 ## Example Output
